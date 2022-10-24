@@ -14,13 +14,13 @@ import static org.springframework.web.servlet.function.RouterFunctions.route;
 public class APIPlaceRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> placeRouter(){
+    public RouterFunction<ServerResponse> placeRouter(APIPlaceHandler apiPlaceHandler){
         return route().nest(path("/api/places"),builder -> builder
-                .GET("",request -> ServerResponse.ok().body(List.of("place1","place2")))
-                .POST("",request -> ServerResponse.ok().body(true))
-                .GET("/{placeId}",request -> ServerResponse.ok().body("place "+request.pathVariable("placeId")))
-                .PUT("/{placeId}",request -> ServerResponse.ok().body(true))
-                .DELETE("/{placeId}",request -> ServerResponse.ok().body(true))
+                .GET("",apiPlaceHandler::getPlaces)
+                .POST("",apiPlaceHandler::createPlace)
+                .GET("/{placeId}",apiPlaceHandler::getPlace)
+                .PUT("/{placeId}",apiPlaceHandler::modifyPlace)
+                .DELETE("/{placeId}",apiPlaceHandler::removePlace)
         ).build();
     }
 }
