@@ -1,0 +1,5 @@
+package org.example.constant;
+
+public enum EventStatus {
+    PENDING, OPENED, CLOSED, CANCELLED, ABORTED;
+}
