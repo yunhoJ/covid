@@ -1,5 +1,8 @@
 package org.example.controller.api;
 
+import org.example.constant.PlaceType;
+import org.example.dto.APIDataResponse;
+import org.example.dto.PlaceDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,8 +12,16 @@ import java.util.List;
 public class APIPlaceController {
     
     @GetMapping("/places")
-    public List<String> getPlaces(){
-        return List.of("Place1","Place2");
+    public APIDataResponse<List<PlaceDTO>> getPlaces(){
+        return APIDataResponse.of(List.of(PlaceDTO.of(
+                PlaceType.COMMON,
+                "빵집",
+                "행복로",
+                "010-3213-3131",
+                10,
+                "신장개업"
+
+        )));
     }
     
     @PostMapping("/places")
@@ -19,8 +30,20 @@ public class APIPlaceController {
     }
     
     @GetMapping("places/{placeId}")
-    public String getPlace(@PathVariable Integer placeId){
-        return "Place"+placeId;
+    public APIDataResponse<PlaceDTO> getPlace(@PathVariable Integer placeId){
+        if(placeId.equals(2)){
+            return APIDataResponse.of(null);
+        }
+
+        return APIDataResponse.of(PlaceDTO.of(
+                PlaceType.COMMON,
+                "빵집",
+                "행복로",
+                "010-3213-3131",
+                10,
+                "신장개업"
+
+        ));
     }
 
     @PutMapping("places/{placeId}")
