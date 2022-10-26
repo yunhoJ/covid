@@ -14,8 +14,8 @@ public enum ErrorCode {
     BAD_REQUEST(10000,ErrorCategory.CLIENT_SIDE,"bad request"),
     SPRING_BAD_REQUEST(10001,ErrorCategory.CLIENT_SIDE,"spring_bad request"),
 
-    INTERNAL_ERROR(10000,ErrorCategory.SERVER_SIDE,"internal error"),
-    SPRING_INTERNAL_ERROR(10001,ErrorCategory.SERVER_SIDE,"Spring-detected internal error")
+    INTERNAL_ERROR(20000,ErrorCategory.SERVER_SIDE,"internal error"),
+    SPRING_INTERNAL_ERROR(20001,ErrorCategory.SERVER_SIDE,"Spring-detected internal error")
     ;
 
     private final Integer code;
