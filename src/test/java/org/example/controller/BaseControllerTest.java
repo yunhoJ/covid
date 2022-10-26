@@ -6,6 +6,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.hamcrest.CoreMatchers.containsString;
@@ -22,8 +23,10 @@ class BaseControllerTest {
     void root() throws Exception {
         ///Given
 
-        //When &  Then
-        mvc.perform(get("/"))
+        //When
+        ResultActions result= mvc.perform(get("/"));
+        //Then
+        result
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
                 .andExpect(content().string(containsString("스프링")))
