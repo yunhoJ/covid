@@ -7,7 +7,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -17,12 +16,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc //mock 설정을 자동으로 해준다
 @SpringBootTest
 class BaseControllerTest {
-//    @Autowired//자동으로 주입
-//    private MockMvc mvc;
+
+    private final MockMvc mvc;
+
+//  @AutoWired 가능 - 생성자 전체에 주입
+    public BaseControllerTest(@Autowired MockMvc mvc) {
+        this.mvc = mvc;
+    }
 
     @DisplayName("[view][GET] basePage requirement")
     @Test
-    void testRoot(@Autowired  MockMvc mvc) throws Exception {
+    void testRoot() throws Exception {
         ///Given
 
         //When
