@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.dto.APIDataResponseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-27T13:50:24" hostname="LAPTOP-VJB7E4II" time="0.051">
+<testsuite name="org.example.dto.APIDataResponseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-27T14:14:49" hostname="LAPTOP-VJB7E4II" time="0.053">
   <properties/>
-  <testcase name="데이터가 없을때 성공응답 생성" classname="org.example.dto.APIDataResponseTest" time="0.05"/>
+  <testcase name="데이터가 없을때 성공응답 생성" classname="org.example.dto.APIDataResponseTest" time="0.052"/>
   <testcase name="데이터가 있을때 성공응답 생성" classname="org.example.dto.APIDataResponseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
