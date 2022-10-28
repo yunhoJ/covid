@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.controller.service.EventServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-28T09:21:35" hostname="LAPTOP-VJB7E4II" time="0.096">
+  <properties/>
+  <testcase name="검색 조건과 함께 이벤트 검색하면 검색된 결고를 결과를 출력해서 보내줌" classname="org.example.controller.service.EventServiceImplTest" time="0.096"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
