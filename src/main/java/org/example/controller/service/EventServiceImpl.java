@@ -22,34 +22,22 @@ public class EventServiceImpl implements EventService {
             LocalDateTime eventStartDatetime,
             LocalDateTime eventEndDatetime
     ) {
-        return List.of(
-                EventDTO.of(
-                        1L,
-                        "오전운동",
-                        EventStatus.OPENED,
-                        LocalDateTime.parse("2021-01-01T00:00:00"),
-                        LocalDateTime.of(2021,1,1,0,0,0),
-                        0,
-                        24,
-                        "마스크 쓰세요!",
-                        LocalDateTime.now(),
-                        LocalDateTime.now()
-        ));
+        return eventRepository.findEvents(placeId, eventName, eventStatus, eventStartDatetime, eventEndDatetime);
     }
 
     public Optional<EventDTO> getEvent(Long eventId) {
-        return Optional.empty();
+        return eventRepository.findEvent(eventId);
     }
 
     public boolean createEvent(EventDTO eventDTO) {
-        return true;
+        return eventRepository.insertEvent(eventDTO);
     }
 
     public boolean modifyEvent(Long eventId, EventDTO eventDTO){
-        return true;
+        return eventRepository.updateEvent(eventId,eventDTO);
     }
 
     public boolean removeEvent(Long eventId){
-        return true;
+        return eventRepository.deleteEvent(eventId);
     }
 }
