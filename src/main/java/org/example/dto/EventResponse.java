@@ -38,4 +38,17 @@ public record EventResponse(
 
         );
     }
+    public static EventResponse from(EventDTO eventDTO){
+        if(eventDTO==null) return null;
+        return EventResponse.of(
+                eventDTO.placeId(),
+                eventDTO.eventName(),
+                eventDTO.eventStatus(),
+                eventDTO.eventStartDatetime(),
+                eventDTO.eventEndDatetime(),
+                eventDTO.currentNumberOfPeople(),
+                eventDTO.capacity(),
+                eventDTO.meno()
+        );
+    }
 }
