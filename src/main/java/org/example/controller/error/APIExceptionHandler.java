@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import javax.validation.ConstraintViolationException;
+
 //restController를 사용하는놈만 봄 - api들만
 @RestControllerAdvice(annotations = RestController.class)
 public class APIExceptionHandler extends ResponseEntityExceptionHandler {
@@ -20,6 +22,19 @@ public class APIExceptionHandler extends ResponseEntityExceptionHandler {
         ErrorCode errorCode= e.getErrorCode();
         HttpStatus status = errorCode.isClientSideError()?
                 HttpStatus.BAD_REQUEST:HttpStatus.INTERNAL_SERVER_ERROR;
+        return super.handleExceptionInternal(
+                e,
+                APIErrorResponse.of(false,errorCode.getCode(),errorCode.getMessage(e)),
+                HttpHeaders.EMPTY,
+                status,
+                request
+        );
+    }
+
+    @ExceptionHandler //general exception 이 생길경우
+    public ResponseEntity<Object> general(ConstraintViolationException e, WebRequest request){
+        ErrorCode errorCode= ErrorCode.VALIDATION_ERROR;
+        HttpStatus status = HttpStatus.BAD_REQUEST;
         return super.handleExceptionInternal(
                 e,
                 APIErrorResponse.of(false,errorCode.getCode(),errorCode.getMessage(e)),

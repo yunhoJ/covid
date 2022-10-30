@@ -9,21 +9,26 @@ import org.example.dto.*;
 import org.example.exception.GeneralException;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api")
 @RestController
+@Validated
 public class APIEventController {
 
     private final EventServiceImpl eventService;
     @GetMapping("/events")
     public APIDataResponse<List<EventResponse>> getEvents(
-            Long placeId,
-            String eventName,
+            @Positive Long placeId,
+            @Size(min=2) String eventName,
             EventStatus eventStatus,
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime eventStartDatetime,
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime eventEndDatetime
@@ -44,9 +49,10 @@ public class APIEventController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/events")
-    public APIDataResponse<Boolean> createEvent(){
+    public APIDataResponse<Boolean> createEvent(@Valid @RequestBody EventRequest request){
 
-        return APIDataResponse.of(true);
+        boolean result=eventService.createEvent(request.toDTO(request));
+        return APIDataResponse.of(result);
     }
 
     @GetMapping("events/{eventId}")
