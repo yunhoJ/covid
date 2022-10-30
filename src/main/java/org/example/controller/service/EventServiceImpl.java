@@ -1,8 +1,10 @@
 package org.example.controller.service;
 
 import lombok.RequiredArgsConstructor;
+import org.example.constant.ErrorCode;
 import org.example.constant.EventStatus;
 import org.example.dto.EventDTO;
+import org.example.exception.GeneralException;
 import org.example.repository.EventRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +24,13 @@ public class EventServiceImpl implements EventService {
             LocalDateTime eventStartDatetime,
             LocalDateTime eventEndDatetime
     ) {
-        return eventRepository.findEvents(placeId, eventName, eventStatus, eventStartDatetime, eventEndDatetime);
+        try {
+            return eventRepository.findEvents(placeId, eventName, eventStatus, eventStartDatetime, eventEndDatetime);
+
+        }
+        catch (Exception e){
+            throw new GeneralException(ErrorCode.DATA_ACCESS_ERROR,e);
+        }
     }
 
     public Optional<EventDTO> getEvent(Long eventId) {

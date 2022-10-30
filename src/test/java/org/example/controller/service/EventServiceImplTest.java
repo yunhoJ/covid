@@ -1,8 +1,10 @@
 package org.example.controller.service;
 
 import org.assertj.core.api.Assertions;
+import org.example.constant.ErrorCode;
 import org.example.constant.EventStatus;
 import org.example.dto.EventDTO;
+import org.example.exception.GeneralException;
 import org.example.repository.EventRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +21,9 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.verify;
@@ -75,6 +79,25 @@ class EventServiceImplTest {
                     assertThat(event.eventEndDatetime()).isBeforeOrEqualTo(eventEndDateTime);
                 });
         then(eventRepository).should().findEvents(placeId,eventName,eventStatus,eventStartDateTime,eventEndDateTime);
+    }
+
+    @DisplayName("이벤트를 검색하는데 에러가 발생한 경우 줄서기 프로젝트 기본 에러로 전환하여 예외 던진다")
+    @Test
+    void givenDataException_whenSearchingEvents_thenReturnGeneralExecption(){
+        //Given
+        RuntimeException e = new RuntimeException("Test") ;
+        BDDMockito.given(eventRepository.findEvents(any(),any(),any(),any(),any()))
+                .willThrow(e);
+
+        //When
+        Throwable throwable=catchThrowable(()->sut.getEvents(any(),any(),any(),any(),any()));
+        //Then
+        assertThat(throwable)
+                .isInstanceOf(GeneralException.class)
+                        .hasMessageContaining(ErrorCode.DATA_ACCESS_ERROR.getMessage());
+//        verify(eventRepository).findEvents(null,null,null,null,null); //아래코드와 같은 역할
+        then(eventRepository).should().findEvents(any(),any(),any(),any(),any());
+
     }
 
     @DisplayName("이벤트 id로 존재하는 이벤트를 조회 하면 해당 이벤트 정보를 출력해야한다 ")
