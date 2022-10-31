@@ -1,6 +1,7 @@
 package org.example.controller.api;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.example.constant.ErrorCode;
 import org.example.constant.EventStatus;
 import org.example.controller.service.EventService;
@@ -22,6 +23,7 @@ import java.util.List;
 @RequestMapping("/api")
 @RestController
 @Validated
+@Slf4j
 public class APIEventController {
 
     private final EventServiceImpl eventService;
@@ -51,6 +53,7 @@ public class APIEventController {
     @PostMapping("/events")
     public APIDataResponse<Boolean> createEvent(@Valid @RequestBody EventRequest request){
 
+        log.debug("보고 싶은 값 {}",request);
         boolean result=eventService.createEvent(request.toDTO(request));
         return APIDataResponse.of(result);
     }

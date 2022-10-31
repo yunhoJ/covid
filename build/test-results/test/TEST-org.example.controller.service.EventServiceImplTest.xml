@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.controller.service.EventServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-30T17:11:30" hostname="LAPTOP-VJB7E4II" time="0.474">
-  <properties/>
-  <testcase name="이벤트를 검색하는데 에러가 발생한 경우 줄서기 프로젝트 기본 에러로 전환하여 예외 던진다" classname="org.example.controller.service.EventServiceImplTest" time="0.474"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
