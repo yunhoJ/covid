@@ -3,10 +3,17 @@ package org.example.domain;
 import lombok.Data;
 import org.example.constant.EventStatus;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Data
+@Entity //데이터 베이스 테이블이랑 동기화
 public class Event {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long placeId;

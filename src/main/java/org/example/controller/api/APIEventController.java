@@ -20,8 +20,8 @@ import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.List;
 @RequiredArgsConstructor
-@RequestMapping("/api")
-@RestController
+//@RequestMapping("/api")
+//@RestController
 @Validated
 @Slf4j
 public class APIEventController {

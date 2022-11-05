@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RepositoryConfig {
-    @Bean
+   /* @Bean
     public EventRepository eventRepository(){
         return new EventRepository() {
         };
-    }
+    }*/
 }
