@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.controller.error.BaseErrorControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-05T12:12:06" hostname="LAPTOP-VJB7E4II" time="0.007">
+  <properties/>
+  <testcase name="noPage" classname="org.example.controller.error.BaseErrorControllerTest" time="0.007"/>
+  <system-out><![CDATA[2022-11-05 21:12:05.746  INFO 17924 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.example.controller.error.BaseErrorControllerTest], using SpringBootContextLoader
+2022-11-05 21:12:05.747  INFO 17924 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.example.controller.error.BaseErrorControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-11-05 21:12:05.747  INFO 17924 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.example.controller.error.BaseErrorControllerTest]: BaseErrorControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-11-05 21:12:05.756  INFO 17924 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.example.Main for test class org.example.controller.error.BaseErrorControllerTest
+2022-11-05 21:12:05.756  INFO 17924 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-11-05 21:12:05.757  INFO 17924 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2f2dc407, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@c96c497, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6e337ba1, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@53a16dd6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@126d8659, org.springframework.test.context.support.DirtiesContextTestExecutionListener@28654aff, org.springframework.test.context.event.EventPublishingTestExecutionListener@5dfec221, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5e9cb95, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7bc8da3f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7978550b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@52bc6fcf, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1942a36e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@24668b5b]
+                  ___           ___           ___           ___
+      ___        /__/\         /__/\         /__/\         /  /\
+     /__/|       \  \:\        \  \:\        \  \:\       /  /::\
+    |  |:|        \  \:\        \  \:\        \__\:\     /  /:/\:\
+    |  |:|    ___  \  \:\   _____\__\:\   ___ /  /::\   /  /:/  \:\
+  __|__|:|   /__/\  \__\:\ /__/::::::::\ /__/\  /:/\:\ /__/:/ \__\:\
+ /__/::::\   \  \:\ /  /:/ \  \:\~~\~~\/ \  \:\/:/__\/ \  \:\ /  /:/
+    ~\~~\:\   \  \:\  /:/   \  \:\  ~~~   \  \::/       \  \:\  /:/
+      \  \:\   \  \:\/:/     \  \:\        \  \:\        \  \:\/:/
+       \__\/    \  \::/       \  \:\        \  \:\        \  \::/
+                 \__\/         \__\/         \__\/         \__\/
+2022-11-05 21:12:05.771  INFO 17924 --- [    Test worker] o.e.c.error.BaseErrorControllerTest      : Starting BaseErrorControllerTest using Java 17.0.5 on LAPTOP-VJB7E4II with PID 17924 (started by yunho in C:\Users\yunho\Desktop\java-spring\covid)
+2022-11-05 21:12:05.771  INFO 17924 --- [    Test worker] o.e.c.error.BaseErrorControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 21:12:05.934  INFO 17924 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-11-05 21:12:06.009  INFO 17924 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-11-05 21:12:06.009  INFO 17924 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-11-05 21:12:06.010  INFO 17924 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2022-11-05 21:12:06.016  INFO 17924 --- [    Test worker] o.e.c.error.BaseErrorControllerTest      : Started BaseErrorControllerTest in 0.258 seconds (JVM running for 5.034)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /wrong-uri
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = org.springframework.web.servlet.resource.ResourceHttpRequestHandler
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

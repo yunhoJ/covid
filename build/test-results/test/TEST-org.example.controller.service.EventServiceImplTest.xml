@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.controller.service.EventServiceImplTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2022-11-05T12:12:06" hostname="LAPTOP-VJB7E4II" time="0.127">
+  <properties/>
+  <testcase name="이벤트 id로 존재하는 이벤트를 조회 하면 해당 이벤트 정보를 출력해야한다" classname="org.example.controller.service.EventServiceImplTest" time="0.09"/>
+  <testcase name="아이디 주면 이벤트 삭제후 true" classname="org.example.controller.service.EventServiceImplTest" time="0.001"/>
+  <testcase name="이벤트 정보가 없으면  이벤트 정보 수정불가와 결과 false 보여줌" classname="org.example.controller.service.EventServiceImplTest" time="0.001"/>
+  <testcase name="검색 조건없이 이벤트 검색하면 전체 결과를 출력해서 보내줌" classname="org.example.controller.service.EventServiceImplTest" time="0.009"/>
+  <testcase name="이벤트 id로 이벤트 조회하면 빈 정보를 출력하여 보여줌" classname="org.example.controller.service.EventServiceImplTest" time="0.0"/>
+  <testcase name="이벤트 아이디와 정보를 주면 이벤트 정보 수정후 결과 true 보여줌" classname="org.example.controller.service.EventServiceImplTest" time="0.002"/>
+  <testcase name="아이디 주면 없으면 이벤트 삭제후 true" classname="org.example.controller.service.EventServiceImplTest" time="0.001"/>
+  <testcase name="이벤트 정보가 없으면  이벤트를 생성하고 결과를 false로 보여줌" classname="org.example.controller.service.EventServiceImplTest" time="0.001"/>
+  <testcase name="이벤트를 검색하는데 에러가 발생한 경우 줄서기 프로젝트 기본 에러로 전환하여 예외 던진다" classname="org.example.controller.service.EventServiceImplTest" time="0.004"/>
+  <testcase name="검색 조건과 함께 이벤트 검색하면 검색된 결고를 결과를 출력해서 보내줌" classname="org.example.controller.service.EventServiceImplTest" time="0.009"/>
+  <testcase name="이벤트 아이디가 없으면  이벤트 정보 수정불가와 결과 false 보여줌" classname="org.example.controller.service.EventServiceImplTest" time="0.002"/>
+  <testcase name="이벤트 정보를 주명 이벤트를 생성하고 결과를 true로 보여줌" classname="org.example.controller.service.EventServiceImplTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

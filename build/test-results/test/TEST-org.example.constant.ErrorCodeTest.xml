@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.constant.ErrorCodeTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2022-11-05T12:12:01" hostname="LAPTOP-VJB7E4II" time="0.067">
+  <properties/>
+  <testcase name="[1] OK (0) ===&gt; ok - this is test message" classname="org.example.constant.ErrorCodeTest" time="0.055"/>
+  <testcase name="[2] BAD_REQUEST (10000) ===&gt; bad request - this is test message" classname="org.example.constant.ErrorCodeTest" time="0.001"/>
+  <testcase name="[3] SPRING_BAD_REQUEST (10001) ===&gt; spring_bad request - this is test message" classname="org.example.constant.ErrorCodeTest" time="0.001"/>
+  <testcase name="[4] INTERNAL_ERROR (20000) ===&gt; internal error - this is test message" classname="org.example.constant.ErrorCodeTest" time="0.001"/>
+  <testcase name="[5] SPRING_INTERNAL_ERROR (20001) ===&gt; Spring-detected internal error - this is test message" classname="org.example.constant.ErrorCodeTest" time="0.0"/>
+  <testcase name="[6] VALIDATION_ERROR (10002) ===&gt; validationError - this is test message" classname="org.example.constant.ErrorCodeTest" time="0.0"/>
+  <testcase name="[7] DATA_ACCESS_ERROR (20002) ===&gt; Data access error - this is test message" classname="org.example.constant.ErrorCodeTest" time="0.0"/>
+  <testcase name="toString 호출 포맷" classname="org.example.constant.ErrorCodeTest" time="0.0"/>
+  <testcase name="[1] &quot;null&quot; ===&gt; bad request" classname="org.example.constant.ErrorCodeTest" time="0.0"/>
+  <testcase name="[2] &quot;&quot; ===&gt; bad request" classname="org.example.constant.ErrorCodeTest" time="0.0"/>
+  <testcase name="[3] &quot; &quot; ===&gt; bad request" classname="org.example.constant.ErrorCodeTest" time="0.0"/>
+  <testcase name="[4] &quot;에러 코드 테스트&quot; ===&gt; 에러 코드 테스트" classname="org.example.constant.ErrorCodeTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
