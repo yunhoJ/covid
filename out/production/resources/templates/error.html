@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><span th:text="${statusCode}?: _" >?</span>에러페이지 입니다</p>
+    <ul>
+        <li>errorCode :<span th:text="${errorCode} ?: _">?</span> </li>
+        <li>message :<span th:text="${message} ?: _">?</span> </li>
+    </ul>
+</body>
+</html>
